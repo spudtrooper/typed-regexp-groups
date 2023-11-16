@@ -8,12 +8,6 @@ export const modes = {
   inc_major: "inc_major",
 };
 
-const dirs = ["cli", "."];
-
-const log = (...args) => {
-  console.log(...args);
-};
-
 const getNewVersion = (version, mode) => {
   const [major, minor, patch] = version.split(".");
   switch (mode) {
@@ -49,7 +43,7 @@ const main = async (opts = {}) => {
   }
   const newPkg = { ...pkg, version: newVersion };
   fs.writeFileSync(packageFile, JSON.stringify(newPkg, null, 2));
-  log(`changed ${packageFile} (${pkg.name}) ${oldVersion} -> ${newVersion}`);
+  console.log(`changed ${packageFile} (${pkg.name}) ${oldVersion} -> ${newVersion}`);
 };
 
 export default main;
