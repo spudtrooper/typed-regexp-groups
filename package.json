@@ -22,7 +22,9 @@
     "test-full": "yarn clean-all && yarn gen && yarn test",
     "test-fresh": "yarn clean-fresh && yarn install && yarn gen && yarn test",
     "test": "yarn jest",
-    "commit": "yarn test-full && rm -rf cli/dist && ./scripts/commit.sh",
+    "commit": "yarn _pre-commit && ./scripts/commit.sh",
+    "push": "yarn _pre-commit && ./scripts/push.sh",
+    "_pre-commit": "yarn test-full && rm -rf cli/dist",
     "uninstall": "rm -rf node_modules",
     "up-version": "node cli/index.js up-package-version --write",
     "up-versions": "yarn up-version && pushd cli && yarn up-version && popd"

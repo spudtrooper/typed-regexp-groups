@@ -1,7 +1,7 @@
-export interface Translator {
+export interface Translator<T> {
   name: string
   regexp(): string;
-  create(matched: RegExpExecArray): any;
+  create(matched: RegExpExecArray): T;
   readonly verbose: boolean;
 }
 
@@ -11,11 +11,11 @@ export interface TranslatorRegistry {
   unregister(type: string): boolean;
 }
 
-export type TranslatorCtor = new (typeName: string) => Translator;
+export type TranslatorCtor = new (typeName: string) => Translator<any>;
 
 interface TranslatePatternResult {
   translatedPattern: string,
-  translatorsByName: { [key: string]: Translator },
+  translatorsByName: { [key: string]: Translator<any> },
 }
 
 export class UnknownTypeError implements Error {
@@ -31,7 +31,7 @@ const translatePattern = (pattern: string, registry: TranslatorRegistry): Transl
   // Find each string like `(?<addr:ip>)` and replace the `ip` 
   // with the regexp for that translator.
   let translatedPattern = pattern;
-  const translatorsByName: { [key: string]: Translator } = {};
+  const translatorsByName: { [key: string]: Translator<any> } = {};
   for (let re = /\(\?<(?<name>\w+):(?<type>\w+)>\)/g, m: RegExpExecArray | null;
     (m = re.exec(pattern)) !== null;) {
     // This is necessary to avoid infinite loops with zero-width matches

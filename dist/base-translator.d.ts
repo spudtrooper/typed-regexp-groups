@@ -2,7 +2,7 @@ import { Translator } from "./translate";
 export interface BaseTranslatorOptions {
     verbose?: boolean;
 }
-declare class BaseTranslator<T> implements Translator {
+declare class BaseTranslator<T> implements Translator<T> {
     name: string;
     private _verbose;
     constructor(name: string, opts?: BaseTranslatorOptions);

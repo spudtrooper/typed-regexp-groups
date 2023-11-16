@@ -53,7 +53,7 @@ const createRE = (pattern: string, flags: string | undefined, registry: Translat
 
 class TypedRegExpImpl implements TypedRegExp {
   private re: RegExp;
-  private translatorsByName: { [key: string]: Translator };
+  private translatorsByName: { [key: string]: Translator<any> };
   private pattern: string = "";
   private registry: TranslatorRegistry | null;
 

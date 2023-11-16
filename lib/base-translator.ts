@@ -4,7 +4,7 @@ export interface BaseTranslatorOptions {
   verbose?: boolean;
 }
 
-class BaseTranslator<T> implements Translator {
+class BaseTranslator<T> implements Translator<T> {
   name: string;
   private _verbose: boolean;
 
