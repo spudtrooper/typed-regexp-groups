@@ -1,6 +1,6 @@
 {
   "name": "typedregexp-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "license": "MIT",
   "type": "module",
@@ -11,11 +11,6 @@
     "index": "./index.js"
   },
   "scripts": {
-    "build": "mkdir -p dist; yarn tsc --outDir dist",
-    "clean": "rm -rf dist",
-    "start": "yarn build && node dist/cli/index.js",
-    "demo": "yarn start match --input \"inet 12.23.34.45\" --regexp \"inet (?<addr:ip>)\"",
-    "test": "yarn demo",
     "up-version": "./index.js up-package-version --write"
   }
 }

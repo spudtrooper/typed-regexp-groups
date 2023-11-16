@@ -2233,8 +2233,8 @@ type-fest@^0.21.3:
   integrity sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==
 
 "typed-regexp-groups@https://github.com/spudtrooper/typed-regexp-groups.git":
-  version "0.0.9"
-  resolved "https://github.com/spudtrooper/typed-regexp-groups.git#7c98946df3b91f7e1f6f5ab40f631e2a940bc82d"
+  version "0.0.16"
+  resolved "https://github.com/spudtrooper/typed-regexp-groups.git#38c3109f40462bef24fd3cc28a678d62c5e6e1c5"
   dependencies:
     esbuild "^0.14.48"
     jest "^29.7.0"
