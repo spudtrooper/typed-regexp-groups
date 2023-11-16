@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var base_translator_1 = require("../base-translator");
+var base_translator_legacy_1 = require("../base-translator-legacy");
 var URLTranslator = /** @class */ (function (_super) {
     __extends(URLTranslator, _super);
     function URLTranslator(name, opts) {
@@ -71,5 +71,5 @@ var URLTranslator = /** @class */ (function (_super) {
         return new URL(url);
     };
     return URLTranslator;
-}(base_translator_1.default));
+}(base_translator_legacy_1.default));
 exports.default = URLTranslator;

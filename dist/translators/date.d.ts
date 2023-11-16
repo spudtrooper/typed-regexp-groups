@@ -1,4 +1,4 @@
-import BaseTranslator, { BaseTranslatorOptions } from "../base-translator";
+import BaseTranslator, { BaseTranslatorOptions } from "../base-translator-legacy";
 declare class DateTranslator extends BaseTranslator<Date> {
     constructor(name: string, opts?: BaseTranslatorOptions);
     regexp(): string;

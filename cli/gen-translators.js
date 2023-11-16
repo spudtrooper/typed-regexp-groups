@@ -8,7 +8,10 @@ const generateImportsAndExports = (dir) => {
   const exports = [];
 
   files.forEach(file => {
-    if (file.endsWith('.ts') && file !== 'index.ts') {
+    if (file.endsWith('.ts')
+      && file.indexOf('-enum.ts') === -1
+      && file.indexOf('-spec.ts') === -1
+      && file !== 'index.ts') {
       const baseName = path.basename(file, '.ts');
       const className = baseName.charAt(0).toUpperCase() + baseName.slice(1) + 'Translator';
 

@@ -1,13 +1,10 @@
-import BaseTranslator, { BaseTranslatorOptions } from "../base-translator";
+import BaseTranslator, { BaseTranslatorOptions, KeysOfEnum, Enum } from "../base-translator";
 
-interface Email {
-  name: string;
-  domain: string;
-}
+import { EmailEnum, Email, emailEnum } from "./email-enum";
 
-class EmailTranslator extends BaseTranslator<Email> {
+class EmailTranslator extends BaseTranslator<Email, EmailEnum> {
   constructor(name: string, opts?: BaseTranslatorOptions) {
-    super(name, opts);
+    super(name, emailEnum, opts);
   }
 
   regexp(): string {
@@ -16,8 +13,7 @@ class EmailTranslator extends BaseTranslator<Email> {
   }
 
   create(matched: RegExpExecArray): Email {
-    const name = this.from(matched, "name"),
-      domain = this.from(matched, "domain");
+    const { name, domain } = this.groupMap(matched, this.name);
     return { name, domain };
   }
 }

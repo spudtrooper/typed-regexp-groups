@@ -1,6 +1,6 @@
 import { TranslatorRegistry, UnknownTypeError } from "./translate";
 import { registerTranslator } from "./registry";
-import BaseTranslator, { BaseTranslatorOptions } from "./base-translator";
+import BaseTranslator, { BaseTranslatorOptions } from "./base-translator-legacy";
 import TypedRegExp, { AnyRegExpExecArray } from "./impl";
 
 interface Pair {

@@ -12,8 +12,9 @@
   },
   "scripts": {
     "build": "yarn clean && mkdir -p dist; yarn tsc -d --outDir dist",
-    "gen-translators": "node cli/index.js gen-translators --write",
-    "gen": "yarn gen-translators && yarn clean && yarn build",
+    "_gen-translators": "node cli/index.js gen-translators --write",
+    "_gen-enums": "node cli/index.js gen-enums --write",
+    "gen": "yarn _gen-translators && yarn _gen-enums && yarn clean && yarn build",
     "clean": "rm -rf dist cli/dist",
     "clean-gen": "rm -rf lib/translators/index.ts",
     "clean-all": "yarn clean && yarn clean-gen",

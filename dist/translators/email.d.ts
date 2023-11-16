@@ -1,9 +1,6 @@
 import BaseTranslator, { BaseTranslatorOptions } from "../base-translator";
-interface Email {
-    name: string;
-    domain: string;
-}
-declare class EmailTranslator extends BaseTranslator<Email> {
+import { EmailEnum, Email } from "./email-enum";
+declare class EmailTranslator extends BaseTranslator<Email, EmailEnum> {
     constructor(name: string, opts?: BaseTranslatorOptions);
     regexp(): string;
     create(matched: RegExpExecArray): Email;
