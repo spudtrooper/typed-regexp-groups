@@ -1,7 +1,7 @@
 {
   "name": "typed-regexp-groups",
   "description": "Allows typing captured groups in regexps",
-  "version": "0.0.22",
+  "version": "0.0.24",
   "main": "dist/impl.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "test": "yarn jest",
     "commit": "yarn _pre-commit && ./scripts/commit.sh",
     "push": "yarn _pre-commit && ./scripts/push.sh",
-    "_pre-commit": "yarn test-full && rm -rf cli/dist",
+    "_pre-commit": "yarn build && yarn test-full && rm -rf cli/dist",
     "uninstall": "rm -rf node_modules",
     "up-version": "node cli/index.js up-package-version --write",
     "up-versions": "yarn up-version && pushd cli && yarn up-version && popd"
