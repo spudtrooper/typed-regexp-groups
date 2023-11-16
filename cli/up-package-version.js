@@ -1,4 +1,3 @@
-import path from "path";
 import fs from "fs";
 
 export const modes = {
@@ -8,12 +7,15 @@ export const modes = {
   inc_major: "inc_major",
 };
 
-const getNewVersion = (version, mode) => {
+const getNewVersion = (version, mode, newVersion) => {
+  if (version === modes.new_version) {
+    return newVersion;
+  }
   const [major, minor, patch] = version.split(".");
   switch (mode) {
-    case "inc_patch": return `${major}.${minor}.${parseInt(patch) + 1}`;
-    case "inc_minor": return `${major}.${parseInt(minor) + 1}.0`;
-    case "inc_major": return `${parseInt(major) + 1}.0.0`;
+    case modes.inc_patch: return `${major}.${minor}.${parseInt(patch) + 1}`;
+    case modes.inc_minor: return `${major}.${parseInt(minor) + 1}.0`;
+    case modes.inc_major: return `${parseInt(major) + 1}.0.0`;
   }
   throw new Error(`unknown mode: ${mode}`);
 };
@@ -25,22 +27,19 @@ const main = async (opts = {}) => {
     throw new Error("missing newVersion or mode");
   }
 
-  const readNewVersion = (pkgFile) => {
-    const pkg = JSON.parse(fs.readFileSync(pkgFile, "utf8"));
-    const { version } = pkg;
-    if (!version) {
-      throw new Error(`missing version in ${pkgFile}`);
-    }
-    const newVersion = new_version || getNewVersion(version, mode),
-      oldVersion = version;
-    return { pkg, oldVersion, newVersion };
-  };
+  const pkg = JSON.parse(fs.readFileSync(packageFile, "utf8"));
+  const { version } = pkg;
+  if (!version) {
+    throw new Error(`missing version in ${packageFile}`);
+  }
+  const newVersion = new_version || getNewVersion(version, mode, new_version),
+    oldVersion = version;
 
-  const { pkg, oldVersion, newVersion } = readNewVersion(packageFile);
   if (!write) {
     console.log(`would change ${packageFile} (${pkg.name}) ${oldVersion} -> ${newVersion}`);
     return;
   }
+
   const newPkg = { ...pkg, version: newVersion };
   fs.writeFileSync(packageFile, JSON.stringify(newPkg, null, 2));
   console.log(`changed ${packageFile} (${pkg.name}) ${oldVersion} -> ${newVersion}`);
