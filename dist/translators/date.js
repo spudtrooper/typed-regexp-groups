@@ -38,10 +38,8 @@ var DateTranslator = /** @class */ (function (_super) {
         ].join("|");
     };
     DateTranslator.prototype.create = function (matched) {
-        var _a;
-        var name = this.name;
-        var match = (_a = matched.groups) === null || _a === void 0 ? void 0 : _a[name];
-        return new Date(Date.parse(match));
+        var date = this.entireMatch(matched);
+        return new Date(Date.parse(date));
     };
     return DateTranslator;
 }(base_translator_1.default));

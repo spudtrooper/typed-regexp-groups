@@ -16,8 +16,8 @@ class EmailTranslator extends BaseTranslator<Email> {
   }
 
   create(matched: RegExpExecArray): Email {
-    const name = matched.groups?.[`${this.name}_name`],
-      domain = matched.groups?.[`${this.name}_domain`];
+    const name = this.from(matched, "name"),
+      domain = this.from(matched, "domain");
     return { name, domain };
   }
 }

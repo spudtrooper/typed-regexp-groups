@@ -21,6 +21,18 @@ class BaseTranslator<T> implements Translator {
     throw new Error("Method not implemented.");
   }
 
+  protected from = (matched: RegExpExecArray, name: string): string | undefined =>
+    matched.groups?.[`${this.name}_${name}`];
+
+  protected fromAsString = (matched: RegExpExecArray, name: string): string | undefined =>
+    matched.groups?.[`${this.name}_${name}`] as string;
+
+  protected fromAsInt = (matched: RegExpExecArray, name: string): number =>
+    parseInt(this.fromAsString(matched, name));
+
+  protected entireMatch = (matched: RegExpExecArray): string =>
+    matched.groups?.[this.name];
+
   get verbose(): boolean { return this._verbose; }
 };
 

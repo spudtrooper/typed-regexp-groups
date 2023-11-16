@@ -26,8 +26,7 @@ var EmailTranslator = /** @class */ (function (_super) {
         return "(?<".concat(name, "_name>[A-Za-z0-9._%+-]+)@(?<").concat(name, "_domain>[A-Za-z0-9.-]+.[A-Za-z]{2,})");
     };
     EmailTranslator.prototype.create = function (matched) {
-        var _a, _b;
-        var name = (_a = matched.groups) === null || _a === void 0 ? void 0 : _a["".concat(this.name, "_name")], domain = (_b = matched.groups) === null || _b === void 0 ? void 0 : _b["".concat(this.name, "_domain")];
+        var name = this.from(matched, "name"), domain = this.from(matched, "domain");
         return { name: name, domain: domain };
     };
     return EmailTranslator;

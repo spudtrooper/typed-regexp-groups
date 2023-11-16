@@ -13,7 +13,12 @@ class IPv4Translator extends BaseTranslator<IPv4> {
   }
 
   create(matched: RegExpExecArray): IPv4 {
-    const octects = matched.slice(2).map((v) => parseInt(v));
+    const octects = [
+      this.fromAsString(matched, "octect_0"),
+      this.fromAsString(matched, "octect_1"),
+      this.fromAsString(matched, "octect_2"),
+      this.fromAsString(matched, "octect_3"),
+    ].map((v) => parseInt(v));
     return { octects };
   }
 }

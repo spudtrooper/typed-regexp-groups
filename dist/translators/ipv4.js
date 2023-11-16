@@ -27,7 +27,12 @@ var IPv4Translator = /** @class */ (function (_super) {
         return "(?<".concat(name, "_octect_0>\\d{1,3})\\.(?<").concat(name, "_octect_1>\\d{1,3})\\.(?<").concat(name, "_octect_2>\\d{1,3})\\.(?<").concat(name, "_octect_3>\\d{1,3})");
     };
     IPv4Translator.prototype.create = function (matched) {
-        var octects = matched.slice(2).map(function (v) { return parseInt(v); });
+        var octects = [
+            this.fromAsString(matched, "octect_0"),
+            this.fromAsString(matched, "octect_1"),
+            this.fromAsString(matched, "octect_2"),
+            this.fromAsString(matched, "octect_3"),
+        ].map(function (v) { return parseInt(v); });
         return { octects: octects };
     };
     return IPv4Translator;

@@ -67,10 +67,8 @@ var URLTranslator = /** @class */ (function (_super) {
             /**/ '';
     };
     URLTranslator.prototype.create = function (matched) {
-        var _a;
-        var name = this.name;
-        var match = (_a = matched.groups) === null || _a === void 0 ? void 0 : _a[name];
-        return new URL(match);
+        var url = this.entireMatch(matched);
+        return new URL(url);
     };
     return URLTranslator;
 }(base_translator_1.default));

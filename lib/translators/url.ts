@@ -62,9 +62,8 @@ class URLTranslator extends BaseTranslator<URL> {
 
 
   create(matched: RegExpExecArray): URL {
-    const { name } = this;
-    const match = matched.groups?.[name];
-    return new URL(match);
+    const url = this.entireMatch(matched);
+    return new URL(url);
   }
 }
 

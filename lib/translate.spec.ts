@@ -19,7 +19,8 @@ class PairTranslator extends BaseTranslator<Pair> {
   }
 
   create(matched: RegExpExecArray): Pair {
-    const [left, right] = matched.slice(2).map((v) => parseInt(v));
+    const left = this.fromAsInt(matched, "left"),
+      right = this.fromAsInt(matched, "right");
     return { left, right };
   }
 }

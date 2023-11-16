@@ -23,9 +23,8 @@ class DateTranslator extends BaseTranslator<Date> {
   }
 
   create(matched: RegExpExecArray): Date {
-    const { name } = this;
-    const match = matched.groups?.[name];
-    return new Date(Date.parse(match));
+    const date = this.entireMatch(matched)
+    return new Date(Date.parse(date));
   }
 }
 
