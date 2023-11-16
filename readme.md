@@ -64,14 +64,14 @@ console.log(`The year is ${year}`); // The year is 2023
 
 Use `TypedRegExp` as a drop-in replacement for `RegExp` and use the syntax `(?<name:type>)` to bind the result of matching "name" to an object of type "type" instead of `(?<name>pattern)` to bind the result of matching "pettern" to "name" to whatever is in "pattern".
 
-See the built in types: [here](TOOD).
+See the built in types: [here](https://github.com/spudtrooper/typed-regexp-groups/blob/main/lib/default-translators.ts).
 
-You can also register new types, see the test [here](TODO).
+You can also register new types, see the test [here](https://github.com/spudtrooper/typed-regexp-groups/blob/main/lib/translate.spec.ts).
 
 ## Installation
 
 ```sh
-yarn install typed-regexp-groups
+yarn install https://github.com/spudtrooper/typed-regexp-groups.git
 ```
 
 ## Caveats
