@@ -11,7 +11,7 @@
     "esbuild": "^0.14.48",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.1",
-    "typed-regexp-groups": "https://bitbucket.org/jeffpalm/typedregexp.git"
+    "typed-regexp-groups": "https://github.com/spudtrooper/typed-regexp-groups.git"
   },
   "devDependencies": {
     "@types/node": "^18.0.3",
