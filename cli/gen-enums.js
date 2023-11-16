@@ -1,6 +1,26 @@
 import fs from "fs";
 import path from "path";
-import spec from "../lib/translators/enums-spec.mjs";
+
+const spec = {
+  enums: [
+    {
+      name: "email",
+      fields: [
+        { name: "name", type: "string" },
+        { name: "domain", type: "string" },
+      ],
+    },
+    {
+      name: "ipv4",
+      fields: [
+        { name: "octect_0", type: "number" },
+        { name: "octect_1", type: "number" },
+        { name: "octect_2", type: "number" },
+        { name: "octect_3", type: "number" },
+      ],
+    },
+  ],
+};
 
 const gen = (enumSpec) => {
   const { name, fields } = enumSpec;

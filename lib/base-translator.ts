@@ -6,10 +6,7 @@ export interface BaseTranslatorOptions {
 
 export type Enum = { [key: string]: string };
 
-export type MapOfEnum<E> = Record<keyof E, any>;
-export type KeysOfEnum<E> = [keyof E][];
-
-class BaseTranslator<T,E> implements Translator<T> {
+class BaseTranslator<T, E> implements Translator<T> {
   name: string;
   private _verbose: boolean;
   private enum: Enum;
@@ -26,6 +23,10 @@ class BaseTranslator<T,E> implements Translator<T> {
   }
   create(matched: RegExpExecArray): T {
     throw new Error("Method not implemented.");
+  }
+
+  _coerce = (v: any): string | number | boolean => {
+    return "";
   }
 
   protected groupMap = (matched: RegExpExecArray, name: string): T => {

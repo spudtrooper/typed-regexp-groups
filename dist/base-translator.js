@@ -4,6 +4,9 @@ var BaseTranslator = /** @class */ (function () {
     function BaseTranslator(name, inEnum, opts) {
         if (opts === void 0) { opts = {}; }
         var _this = this;
+        this._coerce = function (v) {
+            return "";
+        };
         this.groupMap = function (matched, name) {
             return Object.fromEntries(Object.values(_this.enum).map(function (enumValue) {
                 var _a;

@@ -15,21 +15,20 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var base_translator_1 = require("../base-translator");
-var email_enum_1 = require("./email-enum");
+var base_translator_legacy_1 = require("../base-translator-legacy");
 var EmailTranslator = /** @class */ (function (_super) {
     __extends(EmailTranslator, _super);
     function EmailTranslator(name, opts) {
-        return _super.call(this, name, email_enum_1.emailEnum, opts) || this;
+        return _super.call(this, name, opts) || this;
     }
     EmailTranslator.prototype.regexp = function () {
         var name = this.name;
         return "(?<".concat(name, "_name>[A-Za-z0-9._%+-]+)@(?<").concat(name, "_domain>[A-Za-z0-9.-]+.[A-Za-z]{2,})");
     };
     EmailTranslator.prototype.create = function (matched) {
-        var _a = this.groupMap(matched, this.name), name = _a.name, domain = _a.domain;
+        var name = this.fromAsString(matched, "name"), domain = this.fromAsString(matched, "domain");
         return { name: name, domain: domain };
     };
     return EmailTranslator;
-}(base_translator_1.default));
+}(base_translator_legacy_1.default));
 exports.default = EmailTranslator;
