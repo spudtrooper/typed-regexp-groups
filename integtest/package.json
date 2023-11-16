@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "test": "yarn jest",
-    "test-fresh": "rm -rf node_modules && yarn install && yarn jest"
+    "test-fresh": "scripts/test-fresh.sh"
   },
   "dependencies": {
     "@types/jest": "^29.5.8",
