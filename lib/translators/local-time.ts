@@ -21,8 +21,7 @@ class LocalTimeTranslator extends BaseTranslator<LocalTime> {
       `(?<${this.capName("mins")}>\\d{2})` +
       `(?:\\s*[:\\.]\\s*(?<${this.capName("secs")}>\\d{2}))?` +
       `(?:\\s*[:\\.]\\s*(?<${this.capName("millis")}>\\d{1,3}))?` +
-      `(?:\\s*(?<${this.capName("amPm")}>(?:am|AM|a|A|pm|PM|p|P)))?` +
-      "".trim();
+      `(?:\\s*(?<${this.capName("amPm")}>(?:am|AM|a|A|pm|PM|p|P)))?`;
   }
 
   create(matched: RegExpExecArray): LocalTime {

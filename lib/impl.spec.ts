@@ -1,8 +1,42 @@
 import TypedRegExp from "./impl";
 import { PhoneNumber } from "./translators/phone-number";
 import { LocalTime } from "./translators/local-time";
+import { Duration } from "./translators/duration";
 
 describe('TypedRegExp', () => {
+  const durationTests: { test: string, want: Duration }[] = [
+    {
+      test: "1y",
+      want: {
+        millis: { raw: "1y", val: 31557600000 },
+      }
+    },
+    {
+      test: "1y 2months",
+      want: {
+        millis: { raw: "1y 2months", val: 36817200000 },
+      }
+    },
+    // TODO: more
+  ];
+  durationTests.forEach((test) => {
+    const { test: duration, want } = test;
+    const input = `duration ${duration}`;
+
+    it(input, () => {
+      const pattern = "duration (?<d:duration>)",
+        re = new TypedRegExp(pattern),
+        have = re.exec(input);
+
+      expect(have![0]).toEqual(input);
+      expect(have![1]).toEqual(want);
+      expect(have!.groups.d).toEqual(want);
+
+      expect(re.test(input)).toEqual(true);
+      expect(re.test("blah")).toEqual(false);
+    });
+  });
+
   const localTimeTests: { test: string, want: LocalTime }[] = [
     {
       test: "01:23",

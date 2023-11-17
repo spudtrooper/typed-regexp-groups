@@ -29,8 +29,7 @@ var LocalTimeTranslator = /** @class */ (function (_super) {
             "(?<".concat(this.capName("mins"), ">\\d{2})") +
             "(?:\\s*[:\\.]\\s*(?<".concat(this.capName("secs"), ">\\d{2}))?") +
             "(?:\\s*[:\\.]\\s*(?<".concat(this.capName("millis"), ">\\d{1,3}))?") +
-            "(?:\\s*(?<".concat(this.capName("amPm"), ">(?:am|AM|a|A|pm|PM|p|P)))?") +
-            "".trim();
+            "(?:\\s*(?<".concat(this.capName("amPm"), ">(?:am|AM|a|A|pm|PM|p|P)))?");
     };
     LocalTimeTranslator.prototype.create = function (matched) {
         var hoursRaw = this.fromAsString(matched, "hours"), hoursVal = parseInt(hoursRaw), hours = { raw: hoursRaw, val: hoursVal };

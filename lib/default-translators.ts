@@ -7,7 +7,8 @@ const ipv4 = all.Ipv4Translator,
   email = all.EmailTranslator,
   url = all.UrlTranslator,
   phone = all.PhoneNumberTranslator,
-  localtime = all.LocalTimeTranslator
+  localtime = all.LocalTimeTranslator,
+  duration = all.DurationTranslator
   ;
 
 const translatorCtors: { [key: string]: TranslatorCtor } = {
@@ -18,6 +19,7 @@ const translatorCtors: { [key: string]: TranslatorCtor } = {
   url,
   phone,
   localtime,
+  duration,
 }
 
 export default translatorCtors;
