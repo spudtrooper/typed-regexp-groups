@@ -39,6 +39,8 @@
     "ts-jest": "^29.1.1"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.23.3",
+    "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.8",
     "@types/node": "^18.0.3",
     "tsc": "^2.0.4",
