@@ -1,8 +1,8 @@
 export interface Translator {
     readonly name: string;
+    readonly verbose: boolean;
     pattern(): string;
     create(matched: RegExpExecArray): any;
-    readonly verbose: boolean;
 }
 export interface TranslatorRegistry {
     find(type: string): TranslatorCtor | null;
