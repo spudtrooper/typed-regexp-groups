@@ -1,19 +1,17 @@
 {
-  "name": "typed-regexp-groups-integration-test-local",
+  "name": "typed-regexp-groups-integration-test-common",
   "version": "0.0.1",
   "license": "MIT",
-  "scripts": {
-    "test": "yarn jest",
-    "test-fresh": "../scripts/test-fresh.sh"
-  },
+  "main": "index.mjs",
+  "type": "module",
   "dependencies": {
     "@types/jest": "^29.5.8",
     "esbuild": "^0.14.48",
     "jest": "^29.7.0",
-    "ts-jest": "^29.1.1"
+    "ts-jest": "^29.1.1",
+    "typed-regexp-groups": "file:../../.."
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^7.23.3",
     "@jest/globals": "^29.7.0",
     "@types/node": "^18.0.3",
     "tsc": "^2.0.4",

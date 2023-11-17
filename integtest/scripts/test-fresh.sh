@@ -2,8 +2,7 @@
 
 set -e
 
-scripts=$(dirname $0)
-root=$(realpath $scripts/..)
+root=$(pwd)
 
 get_version() {
   local package_json_file=$root/node_modules/typed-regexp-groups/package.json
