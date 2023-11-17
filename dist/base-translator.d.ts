@@ -9,7 +9,7 @@ export interface Derived<T extends string | number | boolean> {
 export type DerivedString = Derived<string>;
 export type DerivedNumber = Derived<number>;
 export type DerivedBoolean = Derived<boolean>;
-declare class BaseTranslator<T> implements Translator<T> {
+declare class BaseTranslator<T> implements Translator {
     readonly name: string;
     readonly verbose: boolean;
     private static nextId;

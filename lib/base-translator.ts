@@ -13,7 +13,7 @@ export type DerivedString = Derived<string>;
 export type DerivedNumber = Derived<number>;
 export type DerivedBoolean = Derived<boolean>;
 
-class BaseTranslator<T> implements Translator<T> {
+class BaseTranslator<T> implements Translator {
   readonly name: string;
   readonly verbose: boolean;
 

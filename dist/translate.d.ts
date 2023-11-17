@@ -1,7 +1,7 @@
-export interface Translator<T> {
+export interface Translator {
     readonly name: string;
     regexp(): string;
-    create(matched: RegExpExecArray): T;
+    create(matched: RegExpExecArray): any;
     readonly verbose: boolean;
 }
 export interface TranslatorRegistry {
@@ -9,11 +9,11 @@ export interface TranslatorRegistry {
     register(type: string, translatorCtor: TranslatorCtor): void;
     unregister(type: string): boolean;
 }
-export type TranslatorCtor = new (typeName: string) => Translator<any>;
+export type TranslatorCtor = new (typeName: string) => Translator;
 interface TranslatePatternResult {
     translatedPattern: string;
     translatorsByName: {
-        [key: string]: Translator<any>;
+        [key: string]: Translator;
     };
 }
 export declare class UnknownTypeError implements Error {
