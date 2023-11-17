@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var base_translator_legacy_1 = require("../base-translator-legacy");
+var base_translator_1 = require("../base-translator");
 var PhoneNumberTranslator = /** @class */ (function (_super) {
     __extends(PhoneNumberTranslator, _super);
     function PhoneNumberTranslator(name, opts) {
@@ -34,5 +34,5 @@ var PhoneNumberTranslator = /** @class */ (function (_super) {
         return { internationalCode: internationalCode, areaCode: areaCode, number: number };
     };
     return PhoneNumberTranslator;
-}(base_translator_legacy_1.default));
+}(base_translator_1.default));
 exports.default = PhoneNumberTranslator;

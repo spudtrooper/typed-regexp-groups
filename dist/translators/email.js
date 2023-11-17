@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var base_translator_legacy_1 = require("../base-translator-legacy");
+var base_translator_1 = require("../base-translator");
 var EmailTranslator = /** @class */ (function (_super) {
     __extends(EmailTranslator, _super);
     function EmailTranslator(name, opts) {
@@ -30,5 +30,5 @@ var EmailTranslator = /** @class */ (function (_super) {
         return { name: name, domain: domain };
     };
     return EmailTranslator;
-}(base_translator_legacy_1.default));
+}(base_translator_1.default));
 exports.default = EmailTranslator;

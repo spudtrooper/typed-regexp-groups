@@ -1,4 +1,4 @@
-import BaseTranslator, { BaseTranslatorOptions } from "../base-translator-legacy";
+import BaseTranslator, { BaseTranslatorOptions } from "../base-translator";
 interface IPv4 {
     octects: number[];
 }

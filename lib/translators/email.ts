@@ -1,4 +1,4 @@
-import BaseTranslator, { BaseTranslatorOptions, } from "../base-translator-legacy";
+import BaseTranslator, { BaseTranslatorOptions, } from "../base-translator";
 
 export interface Email {
   name: string;

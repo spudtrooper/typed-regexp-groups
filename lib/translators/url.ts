@@ -1,4 +1,4 @@
-import BaseTranslator, { BaseTranslatorOptions } from "../base-translator-legacy";
+import BaseTranslator, { BaseTranslatorOptions } from "../base-translator";
 
 class URLTranslator extends BaseTranslator<URL> {
   constructor(name: string, opts?: BaseTranslatorOptions) {

@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var base_translator_legacy_1 = require("../base-translator-legacy");
+var base_translator_1 = require("../base-translator");
 ;
 var IPv4Translator = /** @class */ (function (_super) {
     __extends(IPv4Translator, _super);
@@ -36,5 +36,5 @@ var IPv4Translator = /** @class */ (function (_super) {
         return { octects: octects };
     };
     return IPv4Translator;
-}(base_translator_legacy_1.default));
+}(base_translator_1.default));
 exports.default = IPv4Translator;
