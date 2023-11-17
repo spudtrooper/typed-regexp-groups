@@ -22,7 +22,6 @@ var DateTranslator = /** @class */ (function (_super) {
         return _super.call(this, name, opts) || this;
     }
     DateTranslator.prototype.regexp = function () {
-        var name = this.name;
         // TODO: This sucks
         return [
             // 01 Jan 1970 00:00:00 GMT

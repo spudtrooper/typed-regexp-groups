@@ -14,7 +14,6 @@ class LocalTimeTranslator extends BaseTranslator<LocalTime> {
   }
 
   regexp(): string {
-    const { name: name } = this;
     return "" +
       `(?<${this.capName("hours")}>(?:00|0?[1-9]|1[0-9]|2[0-3]))` +
       `\\s*[:\\.]\\s*` +

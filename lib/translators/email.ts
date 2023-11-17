@@ -11,7 +11,6 @@ class EmailTranslator extends BaseTranslator<Email> {
   }
 
   regexp(): string {
-    const { name: name } = this;
     return "" +
       `(?<${this.capName("name")}>[A-Za-z0-9._%+-]+)` +
       `@` +

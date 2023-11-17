@@ -22,7 +22,6 @@ var EmailTranslator = /** @class */ (function (_super) {
         return _super.call(this, name, opts) || this;
     }
     EmailTranslator.prototype.regexp = function () {
-        var name = this.name;
         return "" +
             "(?<".concat(this.capName("name"), ">[A-Za-z0-9._%+-]+)") +
             "@" +

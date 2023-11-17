@@ -12,7 +12,6 @@ class PhoneNumberTranslator extends BaseTranslator<PhoneNumber> {
   }
 
   regexp(): string {
-    const { name: name } = this;
     return "" +
       `(?:\\+(?<${this.capName("intl_code")}>\\d{1,3})\\s+)?` +
       `(?:\\(?(?<${this.capName("area_code")}>\\d{2,5})\\)?\\s+)?` +

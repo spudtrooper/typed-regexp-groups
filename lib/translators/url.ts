@@ -6,7 +6,6 @@ class URLTranslator extends BaseTranslator<URL> {
   }
 
   regexp(): string {
-    const { name: name } = this;
     // https://www.freecodecamp.org/news/check-if-a-javascript-string-is-a-url/
     return '' +
     // protocol
