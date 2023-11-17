@@ -8,7 +8,7 @@ export interface LocalTime {
 }
 declare class LocalTimeTranslator extends BaseTranslator<LocalTime> {
     constructor(name: string, opts?: BaseTranslatorOptions);
-    regexp(): string;
+    pattern(): string;
     create(matched: RegExpExecArray): LocalTime;
 }
 export default LocalTimeTranslator;

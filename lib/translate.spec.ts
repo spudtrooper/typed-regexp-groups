@@ -13,7 +13,7 @@ class PairTranslator extends BaseTranslator<Pair> {
     super(name);
   }
 
-  regexp(): string {
+  pattern(): string {
     const { name: name } = this;
     return "" +
       `\\{` +

@@ -6,7 +6,7 @@ export interface PhoneNumber {
 }
 declare class PhoneNumberTranslator extends BaseTranslator<PhoneNumber> {
     constructor(name: string, opts?: BaseTranslatorOptions);
-    regexp(): string;
+    pattern(): string;
     create(matched: RegExpExecArray): PhoneNumber;
 }
 export default PhoneNumberTranslator;

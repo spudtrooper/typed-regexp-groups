@@ -22,7 +22,7 @@ var DurationTranslator = /** @class */ (function (_super) {
     function DurationTranslator(name, opts) {
         return _super.call(this, name, opts) || this;
     }
-    DurationTranslator.prototype.regexp = function () {
+    DurationTranslator.prototype.pattern = function () {
         var num = "[-]?(\\d+(\\.\\d+)?|\\.\\d+)([eE][+-]?\\d+)?";
         return "" +
             "(?:".concat(num, "(?:years|year|y|yr))?") +

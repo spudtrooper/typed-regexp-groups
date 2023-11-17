@@ -21,7 +21,7 @@ var LocalTimeTranslator = /** @class */ (function (_super) {
     function LocalTimeTranslator(name, opts) {
         return _super.call(this, name, opts) || this;
     }
-    LocalTimeTranslator.prototype.regexp = function () {
+    LocalTimeTranslator.prototype.pattern = function () {
         return "" +
             "(?<".concat(this.capName("hours"), ">(?:00|0?[1-9]|1[0-9]|2[0-3]))") +
             "\\s*[:\\.]\\s*" +

@@ -15,7 +15,7 @@ declare class BaseTranslator<T> implements Translator {
     private static nextId;
     private id;
     constructor(name: string, opts?: BaseTranslatorOptions);
-    regexp(): string;
+    pattern(): string;
     create(matched: RegExpExecArray): T;
     protected capName: (rest?: string) => string;
     protected from: (matched: RegExpExecArray, name: string) => string | undefined;

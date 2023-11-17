@@ -10,7 +10,7 @@ class DurationTranslator extends BaseTranslator<Duration> {
     super(name, opts);
   }
 
-  regexp(): string {
+  pattern(): string {
     const num = `[-]?(\\d+(\\.\\d+)?|\\.\\d+)([eE][+-]?\\d+)?`;
     return "" +
       `(?:${num}(?:years|year|y|yr))?` +

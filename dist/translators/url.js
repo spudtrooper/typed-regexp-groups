@@ -21,7 +21,7 @@ var URLTranslator = /** @class */ (function (_super) {
     function URLTranslator(name, opts) {
         return _super.call(this, name, opts) || this;
     }
-    URLTranslator.prototype.regexp = function () {
+    URLTranslator.prototype.pattern = function () {
         // https://www.freecodecamp.org/news/check-if-a-javascript-string-is-a-url/
         return '' +
             // protocol

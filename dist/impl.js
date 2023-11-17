@@ -103,7 +103,7 @@ var TypedRegExpImpl = /** @class */ (function () {
             }
             catch (e) {
                 try {
-                    console.error("error calling create with translator", translator, "and match", m, "with translator.regexp", translator.regexp());
+                    console.error("error calling create with translator", translator, "and match", m, "with translator.regexp", translator.pattern());
                 }
                 catch (ignore) {
                     console.log("ignoring error printing messages after calling create", e);

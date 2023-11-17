@@ -25,7 +25,7 @@ var translatePattern = function (pattern, registry) {
             throw new UnknownTypeError(type);
         }
         var translator = new translatorCtor(name_1);
-        var translatedRegexp = translator.regexp(), translated = "(?<".concat(name_1, ">").concat(translatedRegexp, ")"), needle = "(?<".concat(name_1, ":").concat(type, ">)");
+        var translatedRegexp = translator.pattern(), translated = "(?<".concat(name_1, ">").concat(translatedRegexp, ")"), needle = "(?<".concat(name_1, ":").concat(type, ">)");
         translatedPattern = translatedPattern.replace(needle, translated);
         if (translator.verbose) {
             console.log("translatedPattern", translatedPattern);

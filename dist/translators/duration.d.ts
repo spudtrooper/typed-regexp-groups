@@ -4,7 +4,7 @@ export interface Duration {
 }
 declare class DurationTranslator extends BaseTranslator<Duration> {
     constructor(name: string, opts?: BaseTranslatorOptions);
-    regexp(): string;
+    pattern(): string;
     create(matched: RegExpExecArray): Duration;
 }
 export default DurationTranslator;

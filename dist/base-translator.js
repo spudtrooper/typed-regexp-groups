@@ -18,7 +18,7 @@ var BaseTranslator = /** @class */ (function () {
         this.name = name;
         this.verbose = !!verbose;
     }
-    BaseTranslator.prototype.regexp = function () {
+    BaseTranslator.prototype.pattern = function () {
         throw new Error("Method not implemented.");
     };
     BaseTranslator.prototype.create = function (matched) {

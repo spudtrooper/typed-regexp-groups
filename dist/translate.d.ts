@@ -1,6 +1,6 @@
 export interface Translator {
     readonly name: string;
-    regexp(): string;
+    pattern(): string;
     create(matched: RegExpExecArray): any;
     readonly verbose: boolean;
 }

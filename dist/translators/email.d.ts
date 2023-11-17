@@ -5,7 +5,7 @@ export interface Email {
 }
 declare class EmailTranslator extends BaseTranslator<Email> {
     constructor(name: string, opts?: BaseTranslatorOptions);
-    regexp(): string;
+    pattern(): string;
     create(matched: RegExpExecArray): Email;
 }
 export default EmailTranslator;

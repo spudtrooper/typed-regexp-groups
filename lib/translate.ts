@@ -1,6 +1,6 @@
 export interface Translator {
   readonly name: string
-  regexp(): string;
+  pattern(): string;
   create(matched: RegExpExecArray): any;
   readonly verbose: boolean;
 }
@@ -46,7 +46,7 @@ const translatePattern = (pattern: string, registry: TranslatorRegistry): Transl
     }
 
     const translator = new translatorCtor(name);
-    const translatedRegexp = translator.regexp(),
+    const translatedRegexp = translator.pattern(),
       translated = `(?<${name}>${translatedRegexp})`,
       needle = `(?<${name}:${type}>)`;
     translatedPattern = translatedPattern.replace(needle, translated);

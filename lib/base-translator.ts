@@ -26,7 +26,7 @@ class BaseTranslator<T> implements Translator {
     this.name = name;
     this.verbose = !!verbose;
   }
-  regexp(): string {
+  pattern(): string {
     throw new Error("Method not implemented.");
   }
   create(matched: RegExpExecArray): T {

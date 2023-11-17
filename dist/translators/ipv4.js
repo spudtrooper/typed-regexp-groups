@@ -22,7 +22,7 @@ var IPv4Translator = /** @class */ (function (_super) {
     function IPv4Translator(name, opts) {
         return _super.call(this, name, opts) || this;
     }
-    IPv4Translator.prototype.regexp = function () {
+    IPv4Translator.prototype.pattern = function () {
         return "" +
             "(?<".concat(this.capName("octect_0"), ">\\d{1,3})\\.") +
             "(?<".concat(this.capName("octect_1"), ">\\d{1,3})\\.") +

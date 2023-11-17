@@ -5,7 +5,7 @@ class DateTranslator extends BaseTranslator<Date> {
     super(name, opts);
   }
 
-  regexp(): string {
+  pattern(): string {
     // TODO: This sucks
     return [
       // 01 Jan 1970 00:00:00 GMT
