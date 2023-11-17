@@ -1023,6 +1023,11 @@ cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
+dayjs@^1.11.10:
+  version "1.11.10"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.10.tgz#68acea85317a6e164457d6d6947564029a6a16a0"
+  integrity sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==
+
 debug@^4.1.0, debug@^4.1.1:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
@@ -2314,9 +2319,11 @@ type-fest@^0.21.3:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.21.3.tgz#d260a24b0198436e133fa26a524a6d65fa3b2e37"
   integrity sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==
 
-"typed-regexp-groups@file:../..":
-  version "0.0.26"
+"typed-regexp-groups@https://github.com/spudtrooper/typed-regexp-groups.git":
+  version "0.0.29"
+  resolved "https://github.com/spudtrooper/typed-regexp-groups.git#0a83a3f8e8fd2cd3b32f203fb709c5d850d570ac"
   dependencies:
+    dayjs "^1.11.10"
     esbuild "^0.14.48"
     jest "^29.7.0"
     ts-jest "^29.1.1"
