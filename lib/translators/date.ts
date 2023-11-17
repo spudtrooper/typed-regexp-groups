@@ -6,7 +6,7 @@ class DateTranslator extends BaseTranslator<Date> {
   }
 
   regexp(): string {
-    const { name } = this;
+    const { name: name } = this;
     // TODO: This sucks
     return [
       // 01 Jan 1970 00:00:00 GMT

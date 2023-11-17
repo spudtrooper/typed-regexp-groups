@@ -14,7 +14,7 @@ export type DerivedNumber = Derived<number>;
 export type DerivedBoolean = Derived<boolean>;
 
 class BaseTranslator<T> implements Translator<T> {
-  name: string;
+  readonly name: string;
   readonly verbose: boolean;
 
   private static nextId: number = 1;
@@ -33,11 +33,14 @@ class BaseTranslator<T> implements Translator<T> {
     throw new Error("Method not implemented.");
   }
 
+  protected capName = (rest?: string): string =>
+    rest ? `${this.name}_${this.id}_${rest}` : `${this.name}_${this.id}`;
+
   protected from = (matched: RegExpExecArray, name: string): string | undefined =>
-    matched.groups?.[`${this.name}_${name}`];
+    matched.groups?.[`${this.name}_${this.id}_${name}`];
 
   protected fromAsString = (matched: RegExpExecArray, name: string): string | undefined =>
-    matched.groups?.[`${this.name}_${name}`] as string;
+    matched.groups?.[`${this.name}_${this.id}_${name}`] as string;
 
   protected fromAsInt = (matched: RegExpExecArray, name: string): number =>
     parseInt(this.fromAsString(matched, name));

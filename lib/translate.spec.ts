@@ -14,8 +14,13 @@ class PairTranslator extends BaseTranslator<Pair> {
   }
 
   regexp(): string {
-    const { name } = this;
-    return `\\{(?<${name}_left>\\d+),(?<${name}_right>\\d+)\\}`;
+    const { name: name } = this;
+    return "" +
+      `\\{` +
+      `(?<${this.capName("left")}>\\d+)` +
+      `,` +
+      `(?<${this.capName("right")}>\\d+)` +
+      `\\}`;
   }
 
   create(matched: RegExpExecArray): Pair {

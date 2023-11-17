@@ -8,8 +8,12 @@ class IPv4Translator extends BaseTranslator<IPv4> {
   }
 
   regexp(): string {
-    const { name } = this;
-    return `(?<${name}_octect_0>\\d{1,3})\\.(?<${name}_octect_1>\\d{1,3})\\.(?<${name}_octect_2>\\d{1,3})\\.(?<${name}_octect_3>\\d{1,3})`;
+    const { name: name } = this;
+    return "" +
+      `(?<${this.capName("octect_0")}>\\d{1,3})\\.` +
+      `(?<${this.capName("octect_1")}>\\d{1,3})\\.` +
+      `(?<${this.capName("octect_2")}>\\d{1,3})\\.` +
+      `(?<${this.capName("octect_3")}>\\d{1,3})`;
   }
 
   create(matched: RegExpExecArray): IPv4 {

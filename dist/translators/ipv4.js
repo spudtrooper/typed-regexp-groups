@@ -24,7 +24,11 @@ var IPv4Translator = /** @class */ (function (_super) {
     }
     IPv4Translator.prototype.regexp = function () {
         var name = this.name;
-        return "(?<".concat(name, "_octect_0>\\d{1,3})\\.(?<").concat(name, "_octect_1>\\d{1,3})\\.(?<").concat(name, "_octect_2>\\d{1,3})\\.(?<").concat(name, "_octect_3>\\d{1,3})");
+        return "" +
+            "(?<".concat(this.capName("octect_0"), ">\\d{1,3})\\.") +
+            "(?<".concat(this.capName("octect_1"), ">\\d{1,3})\\.") +
+            "(?<".concat(this.capName("octect_2"), ">\\d{1,3})\\.") +
+            "(?<".concat(this.capName("octect_3"), ">\\d{1,3})");
     };
     IPv4Translator.prototype.create = function (matched) {
         var octects = [

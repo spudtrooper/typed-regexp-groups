@@ -14,14 +14,14 @@ class LocalTimeTranslator extends BaseTranslator<LocalTime> {
   }
 
   regexp(): string {
-    const { name } = this;
+    const { name: name } = this;
     return "" +
-      `(?<${name}_hours>(?:00|0?[1-9]|1[0-9]|2[0-3]))` +
+      `(?<${this.capName("hours")}>(?:00|0?[1-9]|1[0-9]|2[0-3]))` +
       `\\s*[:\\.]\\s*` +
-      `(?<${name}_mins>\\d{2})` +
-      `(?:\\s*[:\\.]\\s*(?<${name}_secs>\\d{2}))?` +
-      `(?:\\s*[:\\.]\\s*(?<${name}_millis>\\d{1,3}))?` +
-      `(?:\\s*(?<${name}_amPm>(?:am|AM|a|A|pm|PM|p|P)))?` +
+      `(?<${this.capName("mins")}>\\d{2})` +
+      `(?:\\s*[:\\.]\\s*(?<${this.capName("secs")}>\\d{2}))?` +
+      `(?:\\s*[:\\.]\\s*(?<${this.capName("millis")}>\\d{1,3}))?` +
+      `(?:\\s*(?<${this.capName("amPm")}>(?:am|AM|a|A|pm|PM|p|P)))?` +
       "".trim();
   }
 

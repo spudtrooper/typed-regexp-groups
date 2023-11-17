@@ -24,9 +24,9 @@ var PhoneNumberTranslator = /** @class */ (function (_super) {
     PhoneNumberTranslator.prototype.regexp = function () {
         var name = this.name;
         return "" +
-            "(?:\\+(?<".concat(name, "_intl_code>\\d{1,3})\\s+)?") +
-            "(?:\\(?(?<".concat(name, "_area_code>\\d{2,5})\\)?\\s+)?") +
-            "(?<".concat(name, "_number>(?:[0-9\\-\\(\\)\\/\\.]\\s?){5,15})") +
+            "(?:\\+(?<".concat(this.capName("intl_code"), ">\\d{1,3})\\s+)?") +
+            "(?:\\(?(?<".concat(this.capName("area_code"), ">\\d{2,5})\\)?\\s+)?") +
+            "(?<".concat(this.capName("number"), ">(?:[0-9\\-\\(\\)\\/\\.]\\s?){5,15})") +
             "";
     };
     PhoneNumberTranslator.prototype.create = function (matched) {

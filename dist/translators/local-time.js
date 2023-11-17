@@ -24,12 +24,12 @@ var LocalTimeTranslator = /** @class */ (function (_super) {
     LocalTimeTranslator.prototype.regexp = function () {
         var name = this.name;
         return "" +
-            "(?<".concat(name, "_hours>(?:00|0?[1-9]|1[0-9]|2[0-3]))") +
+            "(?<".concat(this.capName("hours"), ">(?:00|0?[1-9]|1[0-9]|2[0-3]))") +
             "\\s*[:\\.]\\s*" +
-            "(?<".concat(name, "_mins>\\d{2})") +
-            "(?:\\s*[:\\.]\\s*(?<".concat(name, "_secs>\\d{2}))?") +
-            "(?:\\s*[:\\.]\\s*(?<".concat(name, "_millis>\\d{1,3}))?") +
-            "(?:\\s*(?<".concat(name, "_amPm>(?:am|AM|a|A|pm|PM|p|P)))?") +
+            "(?<".concat(this.capName("mins"), ">\\d{2})") +
+            "(?:\\s*[:\\.]\\s*(?<".concat(this.capName("secs"), ">\\d{2}))?") +
+            "(?:\\s*[:\\.]\\s*(?<".concat(this.capName("millis"), ">\\d{1,3}))?") +
+            "(?:\\s*(?<".concat(this.capName("amPm"), ">(?:am|AM|a|A|pm|PM|p|P)))?") +
             "".trim();
     };
     LocalTimeTranslator.prototype.create = function (matched) {

@@ -12,11 +12,11 @@ class PhoneNumberTranslator extends BaseTranslator<PhoneNumber> {
   }
 
   regexp(): string {
-    const { name } = this;
+    const { name: name } = this;
     return "" +
-      `(?:\\+(?<${name}_intl_code>\\d{1,3})\\s+)?` +
-      `(?:\\(?(?<${name}_area_code>\\d{2,5})\\)?\\s+)?` +
-      `(?<${name}_number>(?:[0-9\\-\\(\\)\\/\\.]\\s?){5,15})` +
+      `(?:\\+(?<${this.capName("intl_code")}>\\d{1,3})\\s+)?` +
+      `(?:\\(?(?<${this.capName("area_code")}>\\d{2,5})\\)?\\s+)?` +
+      `(?<${this.capName("number")}>(?:[0-9\\-\\(\\)\\/\\.]\\s?){5,15})` +
       "";
   }
 

@@ -1,5 +1,5 @@
 export interface Translator<T> {
-    name: string;
+    readonly name: string;
     regexp(): string;
     create(matched: RegExpExecArray): T;
     readonly verbose: boolean;
