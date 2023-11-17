@@ -23,7 +23,10 @@ var EmailTranslator = /** @class */ (function (_super) {
     }
     EmailTranslator.prototype.regexp = function () {
         var name = this.name;
-        return "(?<".concat(this.capName("name"), ">[A-Za-z0-9._%+-]+)@(?<").concat(this.capName("domain"), ">[A-Za-z0-9.-]+.[A-Za-z]{2,})");
+        return "" +
+            "(?<".concat(this.capName("name"), ">[A-Za-z0-9._%+-]+)") +
+            "@" +
+            "(?<".concat(this.capName("domain"), ">[A-Za-z0-9.-]+.[A-Za-z]{2,})");
     };
     EmailTranslator.prototype.create = function (matched) {
         var name = this.fromAsString(matched, "name"), domain = this.fromAsString(matched, "domain");

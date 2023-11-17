@@ -26,8 +26,7 @@ var PhoneNumberTranslator = /** @class */ (function (_super) {
         return "" +
             "(?:\\+(?<".concat(this.capName("intl_code"), ">\\d{1,3})\\s+)?") +
             "(?:\\(?(?<".concat(this.capName("area_code"), ">\\d{2,5})\\)?\\s+)?") +
-            "(?<".concat(this.capName("number"), ">(?:[0-9\\-\\(\\)\\/\\.]\\s?){5,15})") +
-            "";
+            "(?<".concat(this.capName("number"), ">(?:[0-9\\-\\(\\)\\/\\.]\\s?){5,15})");
     };
     PhoneNumberTranslator.prototype.create = function (matched) {
         var internationalCode = this.fromAsString(matched, "intl_code"), areaCode = this.fromAsString(matched, "area_code"), number = this.fromAsString(matched, "number");

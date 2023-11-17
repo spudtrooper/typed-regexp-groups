@@ -16,8 +16,7 @@ class PhoneNumberTranslator extends BaseTranslator<PhoneNumber> {
     return "" +
       `(?:\\+(?<${this.capName("intl_code")}>\\d{1,3})\\s+)?` +
       `(?:\\(?(?<${this.capName("area_code")}>\\d{2,5})\\)?\\s+)?` +
-      `(?<${this.capName("number")}>(?:[0-9\\-\\(\\)\\/\\.]\\s?){5,15})` +
-      "";
+      `(?<${this.capName("number")}>(?:[0-9\\-\\(\\)\\/\\.]\\s?){5,15})`;
   }
 
   create(matched: RegExpExecArray): PhoneNumber {
