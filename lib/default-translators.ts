@@ -5,7 +5,8 @@ import all from "./translators";
 const ipv4 = all.Ipv4Translator,
   date = all.DateTranslator,
   email = all.EmailTranslator,
-  url = all.UrlTranslator;
+  url = all.UrlTranslator,
+  phone = all.PhoneNumberTranslator;
 
 const translatorCtors: { [key: string]: TranslatorCtor } = {
   ipv4,
@@ -13,6 +14,7 @@ const translatorCtors: { [key: string]: TranslatorCtor } = {
   date,
   email,
   url,
+  phone,
 }
 
 export default translatorCtors;

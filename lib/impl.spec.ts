@@ -1,6 +1,59 @@
 import TypedRegExp from "./impl";
+import { PhoneNumber } from "./translators/phone-number";
 
 describe('TypedRegExp', () => {
+  const phones: { phone: string, want: PhoneNumber }[] = [
+    {
+      phone: "4561231",
+      want: {
+        number: "4561231",
+        internationalCode: undefined,
+        areaCode: undefined,
+      }
+    },
+    {
+      phone: "(123) 456-1231",
+      want: {
+        number: "456-1231",
+        internationalCode: undefined,
+        areaCode: "123",
+      }
+    },
+    {
+      phone: "+1 (123) 456-1231",
+      want: {
+        number: "456-1231",
+        internationalCode: "1",
+        areaCode: "123",
+      }
+    },
+    {
+      phone: "+1 456-1231",
+      want: {
+        number: "456-1231",
+        internationalCode: "1",
+        areaCode: undefined,
+      }
+    },
+  ];
+  phones.forEach((test) => {
+    const { phone, want } = test;
+    const input = `phone ${phone}`;
+
+    it(input, () => {
+      const pattern = "phone (?<p:phone>)",
+        re = new TypedRegExp(pattern),
+        res = re.exec(input);
+
+      expect(res![0]).toEqual(input);
+      expect(res![1]).toEqual(want);
+      expect(res!.groups.p).toEqual(want);
+
+      expect(re.test(input)).toEqual(true);
+      expect(re.test("blah")).toEqual(false);
+    });
+  });
+
   const ipv4s = [
     "12.23.34.45",
   ];
