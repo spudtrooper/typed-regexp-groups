@@ -11,7 +11,9 @@ export type DerivedNumber = Derived<number>;
 export type DerivedBoolean = Derived<boolean>;
 declare class BaseTranslator<T> implements Translator<T> {
     name: string;
-    private _verbose;
+    readonly verbose: boolean;
+    private static nextId;
+    private id;
     constructor(name: string, opts?: BaseTranslatorOptions);
     regexp(): string;
     create(matched: RegExpExecArray): T;
@@ -19,6 +21,5 @@ declare class BaseTranslator<T> implements Translator<T> {
     protected fromAsString: (matched: RegExpExecArray, name: string) => string | undefined;
     protected fromAsInt: (matched: RegExpExecArray, name: string) => number;
     protected entireMatch: (matched: RegExpExecArray) => string;
-    get verbose(): boolean;
 }
 export default BaseTranslator;

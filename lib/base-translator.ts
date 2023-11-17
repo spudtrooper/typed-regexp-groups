@@ -4,7 +4,7 @@ export interface BaseTranslatorOptions {
   verbose?: boolean;
 }
 
-export interface Derived<T extends string|number|boolean> {
+export interface Derived<T extends string | number | boolean> {
   raw: string
   val: T;
 }
@@ -15,13 +15,16 @@ export type DerivedBoolean = Derived<boolean>;
 
 class BaseTranslator<T> implements Translator<T> {
   name: string;
-  private _verbose: boolean;
+  readonly verbose: boolean;
+
+  private static nextId: number = 1;
+  private id: number = BaseTranslator.nextId++;
 
   constructor(name: string, opts: BaseTranslatorOptions = {}) {
     const { verbose } = opts;
 
     this.name = name;
-    this._verbose = !!verbose;
+    this.verbose = !!verbose;
   }
   regexp(): string {
     throw new Error("Method not implemented.");
@@ -41,8 +44,6 @@ class BaseTranslator<T> implements Translator<T> {
 
   protected entireMatch = (matched: RegExpExecArray): string =>
     matched.groups?.[this.name];
-
-  get verbose(): boolean { return this._verbose; }
 };
 
 export default BaseTranslator;
