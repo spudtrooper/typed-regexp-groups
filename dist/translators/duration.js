@@ -44,9 +44,7 @@ var DurationTranslator = /** @class */ (function (_super) {
             "\\s*" +
             "(?:".concat(num, "(?:microseconds|microsecond|\u03BCs))?") +
             "\\s*" +
-            "(?:".concat(num, "(?:nanoseconds|nanosecond|ns))?") +
-            "\\s*" +
-            "";
+            "(?:".concat(num, "(?:nanoseconds|nanosecond|ns))?");
     };
     DurationTranslator.prototype.create = function (matched) {
         var raw = this.entireMatch(matched), val = (0, parse_duration_1.default)(raw), millis = { raw: raw, val: val };
