@@ -8,7 +8,7 @@ export interface PhoneNumber {
 
 class PhoneNumberTranslator extends BaseTranslator<PhoneNumber> {
   constructor(name: string, opts?: BaseTranslatorOptions) {
-    super(name, { ...opts, verbose: true });
+    super(name, opts);
   }
 
   regexp(): string {
