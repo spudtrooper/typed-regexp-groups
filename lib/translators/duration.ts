@@ -1,4 +1,4 @@
-import BaseTranslator, { BaseTranslatorOptions, DerivedNumber, DerivedBoolean } from "../base-translator";
+import BaseTranslator, { BaseTranslatorOptions, DerivedNumber } from "../base-translator";
 import parseDuration from "parse-duration";
 
 export interface Duration {
